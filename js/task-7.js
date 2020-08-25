@@ -1,10 +1,12 @@
 'use strict';
 
-const inputRange = document.querySelector('#font-size-control');
-const spanText = document.querySelector('#text');
+document.addEventListener("DOMContentLoaded", () => {
+  const inputRange = document.querySelector('#font-size-control');
+  const spanText = document.querySelector('#text');
 
-const textSizesHandler = () => {
-   spanText.style.fontSize = inputRange.value + 'px';
-}
+  const textSizesHandler = () => {
+    spanText.style.fontSize = inputRange.value + 'px';
+  }
 
-inputRange.addEventListener('input', () => textSizesHandler())
+  inputRange.addEventListener('input', () => textSizesHandler());
+});

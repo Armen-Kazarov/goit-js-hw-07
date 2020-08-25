@@ -1,16 +1,19 @@
 'use strict';
 
-const input = document.querySelector('#validation-input');
-const inputSymbolLength = document.querySelector('input[data-length="6"]');
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.querySelector('#validation-input');
+  const inputSymbolLength = document.querySelector('input[data-length="6"]');
 
-const inputValidatorHandler = function() {
+  const inputValidatorHandler = function() {
+    const inputValueLength = input.value.length;
+    const inputSymbolDatasetLength = inputSymbolLength.dataset.length;
 
-  if(input.value.length !== Number(inputSymbolLength.dataset.length)) {
-    input.classList.add('invalid')
-
-  } else if (input.value.length === Number(inputSymbolLength.dataset.length)) {
-    input.classList.remove('invalid')
-    input.classList.add('valid')
+    if(inputValueLength !== Number(inputSymbolDatasetLength)) {
+      input.classList.add('invalid')
+    } else if (inputValueLength === Number(inputSymbolDatasetLength)) {
+      input.classList.remove('invalid')
+      input.classList.add('valid')
+    }
   }
-}
-input.addEventListener('blur', () => inputValidatorHandler());
+  input.addEventListener('blur', () => inputValidatorHandler());
+});
