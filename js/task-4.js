@@ -11,14 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const increment = function() {
     counterValue += 1;
-
-    return counterValueText.textContent = counterValue;
+    counterValueText.textContent = counterValue;
   };
 
   const decrement  = function() {
     counterValue -= 1;
-
-    return counterValueText.textContent = counterValue;
+    counterValueText.textContent = counterValue;
   };
 
   const reset = function() {
